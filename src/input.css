@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F3F1E9;
+   
+}
+
+ .margenes a li {
+    margin-bottom: 20px;
+    font-size: 15px;
+    }
+
+    /* efecto de rellenar para menu nav */
+
+    .navEfecto a::before {
+        content: "";
+        position: absolute;
+        right: 0px;
+        bottom: -1px;
+        width: 0;
+        height: 2px;
+        background-color: #000;
+        transition: height 0.2s ease;
+    }
+
+    .navEfecto a:hover:before {
+        width: 100%;
+    }
+
+
+    /* Estilos para la pantalla de fondo negro al expandir imagen */
+    
+    .fondo-negro {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999; 
+        
+       
+    }
+
+
+/* Estilos para responsive */
+    
+    .imagen-expandida {
+    width: auto;
+    height: 80%;
+        @media screen and  (width < 1300px) {
+            height: 60%;
+            width: 60%;
+        }
+
+        @media screen and  (width < 600px) {
+            height: 40%;
+            width: 60%;
+        }
+
+        @media screen and  (width < 480px) {
+            height: 30%;
+            width: 80%;
+        }
+    }   
+
+    
+    @media(max-width: 890px) {
+        .atlanta {
+            flex-direction: column;
+        }
+
+        .divtexto {
+            width: 100% !important;
+            padding: 20px;
+            text-align: center;
+        }
+   
+        .columnaCel {
+            flex-direction: column;
+        }
+
+        .order {
+            order: 2;
+        }
+
+        .height {
+            height: 12rem !important;
+        }
+
+        .height0 {
+            height: 200px !important;
+        }
+
+         .heightformimg {
+            height: 422px !important;
+        }
+
+        .heightform {
+            width: 100% !important;
+            height: auto !important;
+        } 
+
+        .alertaposition {
+            bottom: 75px !important;
+        }
+    }
+
+    @media(max-width: 772px) {
+        .height890 {
+            height: 350px !important;
+        }
+
+        .chiquito {
+            width: 250px !important;
+        }
+    }
+   
+    @media(max-width: 1280px) {
+        .menuNormal {
+            display: none !important;
+        }
+
+        .menu-icon {
+            display: flex !important;
+            justify-content: end;
+            align-items: end;
+            width: 100%;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 40px;
+            height: 100%;
+        }
+
+        .menu a {
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .formcel {
+            width: 400px !important;
+        }
+
+        .heighalerta {
+            height: 50px;
+            font-size: 12px !important;
+        }
+
+        .mediafixed {
+            position: fixed !important;
+            z-index: 10000000;
+            width: 100%;
+            background-color: #F3F1E9 !important;
+        }
+    }
+
+    @media(max-width: 406px) {
+        .formcel {
+            width: 300px !important;
+        }
+    
+        .botones {
+            bottom: 4.25rem !important  ;
+        }
+    }
+   
+    .cerrar {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+    }
+
+
+    /* Estilos para el icono de hamburguesa */
+    
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+    /* Estilos para el menú de hamburguesa cuando está abierto */
+
+.hamburger-menu {
+    position: fixed;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background-color: #F3F1E9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Estilos para el menú de hamburguesa cuando está abierto y visible */
+
+.hamburger-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* Cambiando scrollbar */
+
